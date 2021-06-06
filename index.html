@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="💿">
+    <title>Adentro.zip Muestra de Proyectos de Grado de la Universidad El Bosque</title>
+    
+    <link rel="shortcut icon" href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Femojigraph.org%2Fmedia%2Fwhatsapp%2Foptical-disk_1f4bf.png&f=1&nofb=1">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
+</head>
+
+<body>
+
+    <a-scene >
+       
+        <a-entity id="rig" pposition="2.192 0 2" >
+            <a-entity id="camera" camera look-controls cursor="rayOrigin: mouse"  position="-7 0 -4" ></a-entity>
+          </a-entity>
+      
+        <a-assets>
+            <a-asset-item id="caja-1" src="./recursos/caja1.glb"></a-asset-item>
+       
+ 
+
+        </a-assets>
+     
+        <a-image
+        navigate-on-click="url: https://linnajuanita.github.io/A0/"
+        src="./recursos/t2.png"
+        position="-4 0 -10"
+        scale="11 5 5"
+        rotation="0 0 0"
+       
+        animation="property: position; dur: 5000; loop: true; easing: linear; dir:alternate; to: -4 3 -10;"
+      ></a-image>
+      <a-sky src="./recursos/back.png"></a-sky>
+      <a-sound src="./s1.mp3" autoplay="true" position="0 2 5" volume="4" loop="true"></a-sound>
+      
+        <script>
+            AFRAME.registerComponent('navigate-on-click', {
+                schema: {
+                    url: { default: ''}
+                },
+          
+                init: function () {
+                    var data = this.data;
+                    var el = this.el;
+          
+                    el.addEventListener('click', function () {
+                        window.open(data.url,"_blank");
+                       
+                        
+                    });
+                }
+            });        
+          </script>
+    </a-scene>
+</div>
+</body>
+
+</html>
